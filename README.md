@@ -3,6 +3,7 @@
 这是一个面向联发科天玑 9500 的 Android 目标检测项目。Android 端使用 **Java 17** 编写，调用 LiteRT 的 MediaTek Neuron NPU 运行时完成 YOLOv5、YOLOv8 和 YOLO26 推理；仓库同时提供一个 Python 模型转换工具，把 PT/ONNX 模型转换成适合手机端部署的 TFLite FP32、FP16 或 INT8 文件。
 
 Author:漫逢烟雨秋
+觉得项目不错的兄弟点点star
 
 ## 📋 当前状态
 
