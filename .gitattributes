@@ -1,0 +1,4 @@
+# Keep GitHub Linguist's language breakdown explicit for the Android and exporter sources.
+*.java linguist-language=Java
+*.py linguist-language=Python
+*.kts linguist-language=Kotlin
