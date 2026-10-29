@@ -1,0 +1,12 @@
+onnx==1.17.0
+onnxconverter-common==1.16.0
+onnxruntime==1.21.1
+onnx2tf==1.26.3
+tensorflow==2.19.0
+tf-keras==2.19.0
+onnx-graphsurgeon==0.5.8
+sng4onnx==1.0.4
+onnxsim==0.8.1
+psutil==7.2.2
+pillow==11.3.0
+pycocotools==2.0.11

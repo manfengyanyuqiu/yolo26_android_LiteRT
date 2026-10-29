@@ -1,0 +1,21 @@
+.gradle/
+.deps/
+.toolchain/
+local.properties
+**/build/
+*.iml
+.idea/
+
+# Local runtimes, generated conversion workspaces and device reports
+model-exporter/exporter-runtime.json
+**/__pycache__/
+*.pyc
+models/
+.deps/
+.toolchain/
+
+# Local model binaries and build output
+*.pt
+*.onnx
+*.tflite
+*.fymf

@@ -1,0 +1,7 @@
+{
+  "export_python": "C:/path/to/yolo26-env/Scripts/python.exe",
+  "convert_python": "C:/path/to/model-env/Scripts/python.exe",
+  "calibration_dir": "C:/path/to/calibration/images/train2017",
+  "work_dir": "C:/fydnn-export-jobs",
+  "note": "Copy to exporter-runtime.json and replace paths for the local machine."
+}
