@@ -1,0 +1,1160 @@
+{
+  "dataset": "COCO128: 32 images disjoint from PTQ calibration; not official COCO val2017",
+  "size": [
+    320,
+    320
+  ],
+  "ground_truth_boxes": 216,
+  "images": [
+    {
+      "file": "000000000009.jpg",
+      "sha256": "3b0bb6bebad60a3329f1e3484434872e86998aeb7750d779b308e4a064868c2c",
+      "label_sha256": "91e0c22ffeffd27ae1c176c38fc534ff4de980c20fafb32922f01dcd407b920e"
+    },
+    {
+      "file": "000000000036.jpg",
+      "sha256": "2bb515b26d250fcdf16effa3a7280babe32ae9b6f7608563e53cd01f5cd66ad4",
+      "label_sha256": "638773d69e1348c8d213cc0fdaf4107d170df7811af56f2cce372ca245556149"
+    },
+    {
+      "file": "000000000064.jpg",
+      "sha256": "406f84619f5197d416f60566d41ad4d58f1d10b0a182652bbda266eedbc3f1ab",
+      "label_sha256": "9bac745360c404473c78925c80d3a5c84d781e66002ac10a13099f0829ef6ab7"
+    },
+    {
+      "file": "000000000074.jpg",
+      "sha256": "99d864809a7355862032b54283bd4808971da5a2b976b20467203e6c192e755d",
+      "label_sha256": "776bfc6915bdeae76b0063488f6fe70f67e1bdaac6d4b36a30c1320ede149c6e"
+    },
+    {
+      "file": "000000000086.jpg",
+      "sha256": "f58a99916783cdf4a7619286dc46adedd4ea1143bcc2cd773c6504aa5280915a",
+      "label_sha256": "58cbf7e5594a04051a591f95eb26382e18b5946920ae1ba81e6e2592c41b20ed"
+    },
+    {
+      "file": "000000000109.jpg",
+      "sha256": "69edeeca53763fb2a4ee51739e4f9a4f053584b4f3ca4ff9911c49fa52ed2762",
+      "label_sha256": "adf78cf0df3b7af395b392c64bf18855785a555620f464aedd13ad04c7ba8847"
+    },
+    {
+      "file": "000000000133.jpg",
+      "sha256": "d8d2ea5e94c83ba74bef9dc52d58e0526e08d03355381683fb953db71ec529e6",
+      "label_sha256": "5370e520b1dabd0ba4f09d938d93c67624d14705bf4316e7e713cdbbb178dea5"
+    },
+    {
+      "file": "000000000143.jpg",
+      "sha256": "03d4d20019d5abdf6f9314a166f8f8cf582f1d0d2167beef7ec2400d0f1b629e",
+      "label_sha256": "44f1493188b67457daaa78519b1f0f0d03c8f6104f556b600a55c6b934f28a16"
+    },
+    {
+      "file": "000000000154.jpg",
+      "sha256": "2938c94a9b07cacf10a8343c35949b065ae868190a11020f458f50450bd13552",
+      "label_sha256": "a59cdc81d9b2ccdc81c2f19fea879ae73ca352c92e9850677712516ec18ee3d4"
+    },
+    {
+      "file": "000000000194.jpg",
+      "sha256": "0713bcf193a25769b047e4dde7820e7fa857bab06f9140a4a64c78d94ed9b4a1",
+      "label_sha256": "967dc01f86f18c77c2bce066cf8908366726efb9205539359b3a4142b4f775a5"
+    },
+    {
+      "file": "000000000241.jpg",
+      "sha256": "14007b87745069ed85c6412dffc8ad11a22de98d5f5c9ae896523e12622961c5",
+      "label_sha256": "3bf2163153e32efc97174426d2a27efb2ffb896f197543c9714b9f69b1ef5d57"
+    },
+    {
+      "file": "000000000260.jpg",
+      "sha256": "f70992bbd14794773e27801c4cf4ba34ca4f453eb2efded62c2a558c40e3885b",
+      "label_sha256": "d323085c99c61db9914594cab8be6f2402941538e44f7a35a4732aaf6332741a"
+    },
+    {
+      "file": "000000000307.jpg",
+      "sha256": "c839076b4fa14020f97c8a5909c84a1e85c912ca262a91c8c4648ebe27caf61f",
+      "label_sha256": "6e1d315f12046e298d8e301f29bebba5c936f299d63891d7554955e356365e3c"
+    },
+    {
+      "file": "000000000315.jpg",
+      "sha256": "5804350236bc0d52715f9354498d52f8d260b0e3d8f965526cd85ca6a18b7caa",
+      "label_sha256": "dbbda9f38d6bbb357891e5a1bba7958cfd241671fde16ab8afc628f62010386b"
+    },
+    {
+      "file": "000000000328.jpg",
+      "sha256": "8ba0ed80d34589221b1243e0764471d91716b3a267827cb37ecfc3cfae52cc90",
+      "label_sha256": "f02f25fa129d20aaf41cf427bd498b452a64bab8782ba83f874a1df114e0bb43"
+    },
+    {
+      "file": "000000000357.jpg",
+      "sha256": "939b5473ea4787a01c2293a3e62979442eea5c9b3dcaab8803c07a5b6d47e087",
+      "label_sha256": "edba8f351c69a2d2063b543c1f330233f2eb0c50d256dc7d96bf787aa66aaa92"
+    },
+    {
+      "file": "000000000370.jpg",
+      "sha256": "0d3719ec6f6f54229f498f7b01b113a864cd1eeccac196086741d98e23ae2455",
+      "label_sha256": "aee07de6f22f1535284044d3332c6aac3ddf4dbd103b6de7acf37bdfaa777f24"
+    },
+    {
+      "file": "000000000389.jpg",
+      "sha256": "f6d313afba47fe0747d1d78cd342f420eb305de8faadb5cb164de428522b40d6",
+      "label_sha256": "a52c9dd4944f0f2cd730d8b191b79c05b203ae9a407ca5004d70c1b931aebd46"
+    },
+    {
+      "file": "000000000400.jpg",
+      "sha256": "7b78338d4c7a30f7c38eb3bf11a7623a195e10926359adfd7281d6ce99e42dcb",
+      "label_sha256": "3990d6338499f409f8c09dea05a7394e2332f637a4ca2d2b1e6b191f39ccdd90"
+    },
+    {
+      "file": "000000000428.jpg",
+      "sha256": "49e87dbacfb3911d83fde336b7c01b79cc7bc77a021a601f2eb8d861f170a466",
+      "label_sha256": "7daf4a6e987a09464a80ef00c217a58f1e0514853418547009935b4f633a7497"
+    },
+    {
+      "file": "000000000443.jpg",
+      "sha256": "f6483d57885c348a27dcdc272e4bd5296c75596d7c64fe638b24dbb503209902",
+      "label_sha256": "027935408e64451ae383f46536d3b8f695253221b1cf6c6555d96b0d21a3e77b"
+    },
+    {
+      "file": "000000000471.jpg",
+      "sha256": "8f473ca6e651f74a74efea3673445230f6bb7d6ae92f76bf3c1e523853ec3995",
+      "label_sha256": "b8e1fbda7a90eaef0e8fbc42aeb8c42d4c5e57fa5d9ac3703f62236dd2324336"
+    },
+    {
+      "file": "000000000488.jpg",
+      "sha256": "9e1c9d4c88d38e6a2cd2f775bea82c137c14dc3b13f8430bcdadcb89ab0b7022",
+      "label_sha256": "85602f8ef008e82324d87e3f03fe8fd7ca5a9c31b4590ceba1341810b3ff560b"
+    },
+    {
+      "file": "000000000508.jpg",
+      "sha256": "0fc73f660a10ed91c52f76a2b34b5fa252bf70ff84f7b2a35374726388528ca2",
+      "label_sha256": null
+    },
+    {
+      "file": "000000000529.jpg",
+      "sha256": "5d9958bdec3062b05090258293a19af01d231de69b943d1ff0bb4a7b943e6db3",
+      "label_sha256": "a22c0cf319ac4b15bbf3556ebec3d87e1012f20f072859e389de5ac7773b46b9"
+    },
+    {
+      "file": "000000000540.jpg",
+      "sha256": "32099f009fcb436bad1bd59b5d48b3e5620fa667a83db5a09879e158dd346103",
+      "label_sha256": "e3f625fb10a5037c9c8da4f79e10add1aa0f635a50b793f32068a3fa941a1fc1"
+    },
+    {
+      "file": "000000000562.jpg",
+      "sha256": "e31320272d768add7113d41a9c65407fd4868da1229f8658fc877e9b07c4c794",
+      "label_sha256": "3d86267e7c552e192af734cba6d118c4bec31dd69ee5108513ff384235a91914"
+    },
+    {
+      "file": "000000000575.jpg",
+      "sha256": "839789fe6192bbd5776761d675aa76017b67810b556f3e25e2f3a31acffd86f3",
+      "label_sha256": "93174f75854f26639ba78bbe744947a852b6d8675c6aa6f16e87e3f1ef9ada46"
+    },
+    {
+      "file": "000000000590.jpg",
+      "sha256": "dd687875b5ff4fd0a91dcc910690da36858271562ea908ff61661b4cec9b4cee",
+      "label_sha256": "7670ba523641930d7561201448747dfacf8b0a6c9088c630fbb5fbc9dd8a7707"
+    },
+    {
+      "file": "000000000605.jpg",
+      "sha256": "9135dd0723240d2d4f64ce2173901a0f23a222dea98b72e1259c28f28fa2aab6",
+      "label_sha256": "9eb59ed55f7eefbbf38a80478ab9bd1ee877ef12e26ddc269276d5ff2639055c"
+    },
+    {
+      "file": "000000000625.jpg",
+      "sha256": "0938276afa762c367dac4968bc9a3d4abf9d83db1f4bea67262bff976568e24c",
+      "label_sha256": "8683419f7198dfe5ece40367134d6268c34dc6d335e11d0d6d68da8dfe3e9dc1"
+    },
+    {
+      "file": "000000000636.jpg",
+      "sha256": "8e948d6888e7bf449e91883d3a2b0d61804308aada31fbf289add4da4dd978e8",
+      "label_sha256": "e9041244afd9201c84bc3b4a8bf51227797044f8cff2075f20fb3f04ab1769d3"
+    }
+  ],
+  "verified_background_images": [
+    "000000000250.jpg",
+    "000000000508.jpg"
+  ],
+  "preprocess": "OpenCV INTER_LINEAR fixed letterbox, RGB [0,1], pad114, auto=False, scaleup=True; identical base pixels for all backends",
+  "postprocess": "Shared TF NMS, best class per anchor, class-aware IoU0.45, conf0.001 for COCO AP; max_det300, COCO maxDets100. P/R micro at conf0.25, IoU0.50",
+  "scope": "Backend/model comparison with packed inputs. Does not evaluate Android camera/Bitmap preprocessing or Java decoder.",
+  "versions": {
+    "onnxruntime": "1.21.1",
+    "tensorflow": "2.19.0",
+    "opencv": "5.0.0"
+  },
+  "limitations": [
+    "Small 32-image subset; not official validation score",
+    "COCO128 train subset may overlap source weight training",
+    "Published YOLOv5 source ONNX uses float16 I/O; source precision is recorded explicitly",
+    "YOLO-format COCO128 labels lack original COCO crowd/ignore metadata; labels evaluated as non-crowd",
+    "Class categories without ground truth in this 32-image subset are excluded from COCO AP averaging",
+    "FP16 means FP16 weights / FLOAT32 I/O; actual Neuron arithmetic is driver-dependent",
+    "Identical OpenCV prepared inputs isolate backend/model differences; Android preprocessing and decoder parity are outside scope"
+  ],
+  "results": [
+    {
+      "model": "yolov5n",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float16",
+      "file": "yolov5n_320.onnx",
+      "sha256": "ac96c03eda2f24e4ea0a22019f5375c3cec17ad0ed48a2534a4a3f348ff34bb5",
+      "metrics": {
+        "mAP50_95": 0.37390947790730317,
+        "AP50": 0.5467665961864903,
+        "AP75": 0.3983690364939083,
+        "AR100": 0.43769526651240204,
+        "precision_conf025_iou050_micro": 0.7606837606837606,
+        "recall_conf025_iou050_micro": 0.41203703703703703,
+        "tp": 89,
+        "fp": 28,
+        "fn": 127,
+        "detections_conf0001": 3396
+      }
+    },
+    {
+      "model": "yolov5n",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolov5n_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "3984dae87c68be60118fd537079ec47ed48aba92d43720f1c3daec8a06f524d9",
+      "metrics": {
+        "mAP50_95": 0.3738233508612557,
+        "AP50": 0.5467671561384299,
+        "AP75": 0.3983698707532695,
+        "AR100": 0.4373956567019227,
+        "precision_conf025_iou050_micro": 0.7606837606837606,
+        "recall_conf025_iou050_micro": 0.41203703703703703,
+        "tp": 89,
+        "fp": 28,
+        "fn": 127,
+        "detections_conf0001": 3388
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.02931377880156986,
+        "max_coordinate_error_input_px": 1.6951751708984375,
+        "mean_probability_error": 1.0568542066868815e-05,
+        "max_probability_error": 0.007098942995071411
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.008612704604749055
+    },
+    {
+      "model": "yolov5n",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolov5n_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ea823c91cb11b1eea6a82b412cc69d43a79849274e7c88725432a799912dbdb",
+      "metrics": {
+        "mAP50_95": 0.3163785884114779,
+        "AP50": 0.47991986213330984,
+        "AP75": 0.34995611465441756,
+        "AR100": 0.38180504420274236,
+        "precision_conf025_iou050_micro": 0.8155339805825242,
+        "recall_conf025_iou050_micro": 0.3888888888888889,
+        "tp": 84,
+        "fp": 19,
+        "fn": 132,
+        "detections_conf0001": 4084
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 3.32138431609623,
+        "max_coordinate_error_input_px": 294.3961486816406,
+        "mean_probability_error": 0.004523935850615504,
+        "max_probability_error": 0.7483457922935486
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.753088949582525
+    },
+    {
+      "model": "yolov5s",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float16",
+      "file": "yolov5s_320.onnx",
+      "sha256": "e9c474efdd69b24b1828233a0b85ebeec8bc7417fbd8ed1a7a76346c1eda3998",
+      "metrics": {
+        "mAP50_95": 0.49828289458088065,
+        "AP50": 0.6929743957769819,
+        "AP75": 0.5154284359206432,
+        "AR100": 0.5323288607527737,
+        "precision_conf025_iou050_micro": 0.8156028368794326,
+        "recall_conf025_iou050_micro": 0.5324074074074074,
+        "tp": 115,
+        "fp": 26,
+        "fn": 101,
+        "detections_conf0001": 2639
+      }
+    },
+    {
+      "model": "yolov5s",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolov5s_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "c99d712e1d29df5208a4a73d2389e844530e342623170ce3aca0f848173e44e6",
+      "metrics": {
+        "mAP50_95": 0.49505493885649504,
+        "AP50": 0.693063979066775,
+        "AP75": 0.5100474630407466,
+        "AR100": 0.528858961087222,
+        "precision_conf025_iou050_micro": 0.8156028368794326,
+        "recall_conf025_iou050_micro": 0.5324074074074074,
+        "tp": 115,
+        "fp": 26,
+        "fn": 101,
+        "detections_conf0001": 2638
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.02993028133634537,
+        "max_coordinate_error_input_px": 0.9667396545410156,
+        "mean_probability_error": 9.954742314930922e-06,
+        "max_probability_error": 0.006346166133880615
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.32279557243856116
+    },
+    {
+      "model": "yolov5s",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolov5s_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ce3d1cd11076d3ef5ad0c5c17bb0c8da1f617e4ccace57326f47255ea1bd6a8",
+      "metrics": {
+        "mAP50_95": 0.4453932720002949,
+        "AP50": 0.6912394851981273,
+        "AP75": 0.4611703457528134,
+        "AR100": 0.479287634786356,
+        "precision_conf025_iou050_micro": 0.7816901408450704,
+        "recall_conf025_iou050_micro": 0.5138888888888888,
+        "tp": 111,
+        "fp": 31,
+        "fn": 105,
+        "detections_conf0001": 2677
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 2.404174562484499,
+        "max_coordinate_error_input_px": 197.26983642578125,
+        "mean_probability_error": 0.0031096503698613254,
+        "max_probability_error": 0.7136737108230591
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.288962258058577
+    },
+    {
+      "model": "yolov8n",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float32",
+      "file": "yolov8n_320.onnx",
+      "sha256": "42b9dcc7f097b8d201e2fdf0c836f16b6663867e1f6503e919423ad783336182",
+      "metrics": {
+        "mAP50_95": 0.485329932553247,
+        "AP50": 0.6570017101711674,
+        "AP75": 0.49359817042466125,
+        "AR100": 0.53221882621499,
+        "precision_conf025_iou050_micro": 0.8571428571428571,
+        "recall_conf025_iou050_micro": 0.4166666666666667,
+        "tp": 90,
+        "fp": 15,
+        "fn": 126,
+        "detections_conf0001": 1833
+      }
+    },
+    {
+      "model": "yolov8n",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolov8n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "5b809bd184c59bca3c576108502dbce701c85865c7a7b28151f71b5518845838",
+      "metrics": {
+        "mAP50_95": 0.4849984896671816,
+        "AP50": 0.6562956596722453,
+        "AP75": 0.49942225472345025,
+        "AR100": 0.5316293613320467,
+        "precision_conf025_iou050_micro": 0.8571428571428571,
+        "recall_conf025_iou050_micro": 0.4166666666666667,
+        "tp": 90,
+        "fp": 15,
+        "fn": 126,
+        "detections_conf0001": 1830
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.052722083046322775,
+        "max_coordinate_error_input_px": 4.348859786987305,
+        "mean_probability_error": 3.5833982058518034e-07,
+        "max_probability_error": 0.02811753749847412
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.033144288606540284
+    },
+    {
+      "model": "yolov8n",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolov8n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "baf042fad965da8df83424a95d481c2a3a5be98970442b62bdbd95989d20cf89",
+      "metrics": {
+        "mAP50_95": 0.4330253033184491,
+        "AP50": 0.6506456170132756,
+        "AP75": 0.4301622871482459,
+        "AR100": 0.4758611727857252,
+        "precision_conf025_iou050_micro": 0.8173076923076923,
+        "recall_conf025_iou050_micro": 0.39351851851851855,
+        "tp": 85,
+        "fp": 19,
+        "fn": 131,
+        "detections_conf0001": 1592
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 5.048680855887277,
+        "max_coordinate_error_input_px": 253.55734252929688,
+        "mean_probability_error": 4.0728637610473446e-05,
+        "max_probability_error": 0.8787215352058411
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.230462923479795
+    },
+    {
+      "model": "yolov8s",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float32",
+      "file": "yolov8s_320.onnx",
+      "sha256": "5557ac2db749425f08629fbe688a07399129f4262b51e777e9aff81aa2cea29d",
+      "metrics": {
+        "mAP50_95": 0.5524568862454212,
+        "AP50": 0.7256135148099427,
+        "AP75": 0.5556134847265195,
+        "AR100": 0.5882757105071683,
+        "precision_conf025_iou050_micro": 0.8235294117647058,
+        "recall_conf025_iou050_micro": 0.5185185185185185,
+        "tp": 112,
+        "fp": 24,
+        "fn": 104,
+        "detections_conf0001": 1498
+      }
+    },
+    {
+      "model": "yolov8s",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolov8s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "d34250865437348fdb02ba4309dc3b3904690c701b72be7b7e2461e50688b4a3",
+      "metrics": {
+        "mAP50_95": 0.5450279761734476,
+        "AP50": 0.721344609658558,
+        "AP75": 0.5520620426257876,
+        "AR100": 0.5789641163042698,
+        "precision_conf025_iou050_micro": 0.8235294117647058,
+        "recall_conf025_iou050_micro": 0.5185185185185185,
+        "tp": 112,
+        "fp": 24,
+        "fn": 104,
+        "detections_conf0001": 1495
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.03556712706883748,
+        "max_coordinate_error_input_px": 2.010164260864258,
+        "mean_probability_error": 2.1585036423251344e-07,
+        "max_probability_error": 0.016974985599517822
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.742891007197366
+    },
+    {
+      "model": "yolov8s",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolov8s_320_4d_norm_channels_int8.tflite",
+      "sha256": "40f4295c482a27b08317d5150b15cb78cf9727553d553aa79fbf98572b499961",
+      "metrics": {
+        "mAP50_95": 0.4691662839030079,
+        "AP50": 0.6766620434170622,
+        "AP75": 0.5291570350282327,
+        "AR100": 0.5029155580849954,
+        "precision_conf025_iou050_micro": 0.7803030303030303,
+        "recall_conf025_iou050_micro": 0.47685185185185186,
+        "tp": 103,
+        "fp": 29,
+        "fn": 113,
+        "detections_conf0001": 1183
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 8.341013895670573,
+        "max_coordinate_error_input_px": 319.2804260253906,
+        "mean_probability_error": 4.202772578268888e-05,
+        "max_probability_error": 0.8683613538742065
+      },
+      "mAP50_95_delta_pp_vs_onnx": -8.32906023424133
+    },
+    {
+      "model": "yolo26n",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float32",
+      "file": "yolo26n_320.onnx",
+      "sha256": "29d2b9d5272f58d6cc13f2b4e8a8b6cf776405849a3dc6aeb0540e527b85f178",
+      "metrics": {
+        "mAP50_95": 0.4935591936686063,
+        "AP50": 0.6554008333511226,
+        "AP75": 0.5344258919151462,
+        "AR100": 0.5409127374472642,
+        "precision_conf025_iou050_micro": 0.9047619047619048,
+        "recall_conf025_iou050_micro": 0.4398148148148148,
+        "tp": 95,
+        "fp": 10,
+        "fn": 121,
+        "detections_conf0001": 1670
+      }
+    },
+    {
+      "model": "yolo26n",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolo26n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "fb222c4963e93dbf97c3cf3aed4bc2696c781fb061d62510b30dee24258e6b0b",
+      "metrics": {
+        "mAP50_95": 0.4932417332294327,
+        "AP50": 0.6552892162721041,
+        "AP75": 0.5344258919151462,
+        "AR100": 0.5425202784569793,
+        "precision_conf025_iou050_micro": 0.8867924528301887,
+        "recall_conf025_iou050_micro": 0.4351851851851852,
+        "tp": 94,
+        "fp": 12,
+        "fn": 122,
+        "detections_conf0001": 1671
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.056877874646868026,
+        "max_coordinate_error_input_px": 15.034294128417969,
+        "mean_probability_error": 3.9700559344575075e-07,
+        "max_probability_error": 0.027385026216506958
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.0317460439173578
+    },
+    {
+      "model": "yolo26n",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolo26n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "61a3e5987aee38ad166d23db841e28a4cef8a2b67f124ac48cb1bf7212adf1ec",
+      "metrics": {
+        "mAP50_95": 0.43443656643258133,
+        "AP50": 0.638998183967257,
+        "AP75": 0.4789691446073233,
+        "AR100": 0.46803455495910734,
+        "precision_conf025_iou050_micro": 0.8936170212765957,
+        "recall_conf025_iou050_micro": 0.3888888888888889,
+        "tp": 84,
+        "fp": 10,
+        "fn": 132,
+        "detections_conf0001": 1158
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 5.575151062011718,
+        "max_coordinate_error_input_px": 261.3285827636719,
+        "mean_probability_error": 3.8005091247170985e-05,
+        "max_probability_error": 0.8600516319274902
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.912262723602496
+    },
+    {
+      "model": "yolo26s",
+      "backend": "onnxruntime_cpu",
+      "precision": "source_float32",
+      "file": "yolo26s_320.onnx",
+      "sha256": "d4f6c053003385ce7f8003365f64c8299c374269ef6de8597056754a3acc7459",
+      "metrics": {
+        "mAP50_95": 0.576238783329356,
+        "AP50": 0.7399943543363241,
+        "AP75": 0.6199915400178669,
+        "AR100": 0.6066394712846119,
+        "precision_conf025_iou050_micro": 0.8529411764705882,
+        "recall_conf025_iou050_micro": 0.5370370370370371,
+        "tp": 116,
+        "fp": 20,
+        "fn": 100,
+        "detections_conf0001": 1505
+      }
+    },
+    {
+      "model": "yolo26s",
+      "precision": "fp16",
+      "backend": "tflite_cpu",
+      "file": "yolo26s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "c3d877e26ad8ab9eb32af9b56374b83d8608210474b938d1c9d11d1f0f425436",
+      "metrics": {
+        "mAP50_95": 0.5749479097652568,
+        "AP50": 0.737004457742948,
+        "AP75": 0.6172616959329542,
+        "AR100": 0.6075748604904615,
+        "precision_conf025_iou050_micro": 0.8529411764705882,
+        "recall_conf025_iou050_micro": 0.5370370370370371,
+        "tp": 116,
+        "fp": 20,
+        "fn": 100,
+        "detections_conf0001": 1502
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.0744378155753726,
+        "max_coordinate_error_input_px": 12.941427230834961,
+        "mean_probability_error": 4.24029909784925e-07,
+        "max_probability_error": 0.042628854513168335
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.1290873564099182
+    },
+    {
+      "model": "yolo26s",
+      "precision": "int8",
+      "backend": "tflite_cpu",
+      "file": "yolo26s_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "f72654a645844806e80749f5622add31d05503803ce728e336f498b21b8ad535",
+      "metrics": {
+        "mAP50_95": 0.4415665262243447,
+        "AP50": 0.6649024160228031,
+        "AP75": 0.4419555530238962,
+        "AR100": 0.4948485654016345,
+        "precision_conf025_iou050_micro": 0.8407079646017699,
+        "recall_conf025_iou050_micro": 0.4398148148148148,
+        "tp": 95,
+        "fp": 18,
+        "fn": 121,
+        "detections_conf0001": 1692
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 8.093833923339844,
+        "max_coordinate_error_input_px": 402.0352478027344,
+        "mean_probability_error": 7.578784107629742e-05,
+        "max_probability_error": 0.8941596746444702
+      },
+      "mAP50_95_delta_pp_vs_onnx": -13.467225710501124
+    },
+    {
+      "model": "yolov5n",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolov5n_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "3984dae87c68be60118fd537079ec47ed48aba92d43720f1c3daec8a06f524d9",
+      "metrics": {
+        "mAP50_95": 0.38043880049478146,
+        "AP50": 0.5576414038774955,
+        "AP75": 0.40923892042834903,
+        "AR100": 0.43772313719244665,
+        "precision_conf025_iou050_micro": 0.7606837606837606,
+        "recall_conf025_iou050_micro": 0.41203703703703703,
+        "tp": 89,
+        "fp": 28,
+        "fn": 127,
+        "detections_conf0001": 3390
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.037492102138579834,
+        "max_coordinate_error_input_px": 1.8124961853027344,
+        "mean_probability_error": 1.7627551319457585e-05,
+        "max_probability_error": 0.005859375
+      },
+      "mAP50_95_delta_pp_vs_onnx": 0.6529322587478292,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.035728754845876544,
+        "max_coordinate_error_input_px": 1.9012641906738281,
+        "mean_probability_error": 2.11556751354755e-05,
+        "max_probability_error": 0.007343083620071411
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 0.6615449633525783
+    },
+    {
+      "model": "yolov5n",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolov5n_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ea823c91cb11b1eea6a82b412cc69d43a79849274e7c88725432a799912dbdb",
+      "metrics": {
+        "mAP50_95": 0.3075934026634614,
+        "AP50": 0.5003260939541968,
+        "AP75": 0.3175864735705873,
+        "AR100": 0.38696087409322705,
+        "precision_conf025_iou050_micro": 0.7735849056603774,
+        "recall_conf025_iou050_micro": 0.37962962962962965,
+        "tp": 82,
+        "fp": 24,
+        "fn": 134,
+        "detections_conf0001": 4136
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 3.449003213549417,
+        "max_coordinate_error_input_px": 302.1065979003906,
+        "mean_probability_error": 0.004604311693936452,
+        "max_probability_error": 0.7680330276489258
+      },
+      "mAP50_95_delta_pp_vs_onnx": -6.631607524384176,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 1.3653416685074096,
+        "max_coordinate_error_input_px": 167.70254516601562,
+        "mean_probability_error": 0.001719499001567466,
+        "max_probability_error": 0.4819038212299347
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": -0.8785185748016511
+    },
+    {
+      "model": "yolov5s",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolov5s_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "c99d712e1d29df5208a4a73d2389e844530e342623170ce3aca0f848173e44e6",
+      "metrics": {
+        "mAP50_95": 0.4959760112387574,
+        "AP50": 0.6929736856323817,
+        "AP75": 0.5100474630407466,
+        "AR100": 0.5301713422269688,
+        "precision_conf025_iou050_micro": 0.8156028368794326,
+        "recall_conf025_iou050_micro": 0.5324074074074074,
+        "tp": 115,
+        "fp": 26,
+        "fn": 101,
+        "detections_conf0001": 2639
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.039974376511952237,
+        "max_coordinate_error_input_px": 6.124992370605469,
+        "mean_probability_error": 1.7711150629857278e-05,
+        "max_probability_error": 0.010498046875
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.2306883342123256,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.03856826487041655,
+        "max_coordinate_error_input_px": 6.310615539550781,
+        "mean_probability_error": 2.1499505924659922e-05,
+        "max_probability_error": 0.010451465845108032
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 0.09210723822623557
+    },
+    {
+      "model": "yolov5s",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolov5s_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ce3d1cd11076d3ef5ad0c5c17bb0c8da1f617e4ccace57326f47255ea1bd6a8",
+      "metrics": {
+        "mAP50_95": 0.44204857744783504,
+        "AP50": 0.6501727223478275,
+        "AP75": 0.4599186270293743,
+        "AR100": 0.48829803437540015,
+        "precision_conf025_iou050_micro": 0.7816901408450704,
+        "recall_conf025_iou050_micro": 0.5138888888888888,
+        "tp": 111,
+        "fp": 31,
+        "fn": 105,
+        "detections_conf0001": 2686
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 2.5674054003518725,
+        "max_coordinate_error_input_px": 204.07223510742188,
+        "mean_probability_error": 0.003214489486248802,
+        "max_probability_error": 0.6569685935974121
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.62343171330456,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 1.4125607590448288,
+        "max_coordinate_error_input_px": 113.8226318359375,
+        "mean_probability_error": 0.0014065703265507643,
+        "max_probability_error": 0.453640878200531
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": -0.3344694552459837
+    },
+    {
+      "model": "yolov8n",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolov8n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "5b809bd184c59bca3c576108502dbce701c85865c7a7b28151f71b5518845838",
+      "metrics": {
+        "mAP50_95": 0.48479069655280294,
+        "AP50": 0.6562137253072877,
+        "AP75": 0.49283121005609887,
+        "AR100": 0.5322815352450903,
+        "precision_conf025_iou050_micro": 0.8571428571428571,
+        "recall_conf025_iou050_micro": 0.4166666666666667,
+        "tp": 90,
+        "fp": 15,
+        "fn": 126,
+        "detections_conf0001": 1834
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.07903039546239944,
+        "max_coordinate_error_input_px": 5.161409378051758,
+        "mean_probability_error": 4.2840838986670686e-07,
+        "max_probability_error": 0.03470653295516968
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.05392360004440877,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.060958726746695384,
+        "max_coordinate_error_input_px": 2.573394775390625,
+        "mean_probability_error": 2.6965346270506937e-07,
+        "max_probability_error": 0.03125542402267456
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": -0.020779311437868486
+    },
+    {
+      "model": "yolov8n",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolov8n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "baf042fad965da8df83424a95d481c2a3a5be98970442b62bdbd95989d20cf89",
+      "metrics": {
+        "mAP50_95": 0.42357252916723953,
+        "AP50": 0.658279164197131,
+        "AP75": 0.4331674125125756,
+        "AR100": 0.46557954619975084,
+        "precision_conf025_iou050_micro": 0.8317757009345794,
+        "recall_conf025_iou050_micro": 0.41203703703703703,
+        "tp": 89,
+        "fp": 18,
+        "fn": 127,
+        "detections_conf0001": 1576
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 4.876258922758557,
+        "max_coordinate_error_input_px": 258.6717834472656,
+        "mean_probability_error": 4.1256584820248895e-05,
+        "max_probability_error": 0.8468442559242249
+      },
+      "mAP50_95_delta_pp_vs_onnx": -6.1757403386007494,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 2.3053544180733816,
+        "max_coordinate_error_input_px": 139.79393005371094,
+        "mean_probability_error": 1.7595855740919e-05,
+        "max_probability_error": 0.8417470455169678
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": -0.9452774151209542
+    },
+    {
+      "model": "yolov8s",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolov8s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "d34250865437348fdb02ba4309dc3b3904690c701b72be7b7e2461e50688b4a3",
+      "metrics": {
+        "mAP50_95": 0.5481195449947689,
+        "AP50": 0.7213587017278476,
+        "AP75": 0.5520639753833935,
+        "AR100": 0.5817344619007023,
+        "precision_conf025_iou050_micro": 0.8235294117647058,
+        "recall_conf025_iou050_micro": 0.5185185185185185,
+        "tp": 112,
+        "fp": 24,
+        "fn": 104,
+        "detections_conf0001": 1497
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.06550230889093309,
+        "max_coordinate_error_input_px": 6.229963302612305,
+        "mean_probability_error": 3.04297738087674e-07,
+        "max_probability_error": 0.022783339023590088
+      },
+      "mAP50_95_delta_pp_vs_onnx": -0.4337341250652327,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.055555837267921085,
+        "max_coordinate_error_input_px": 5.648765563964844,
+        "mean_probability_error": 2.1156732951307537e-07,
+        "max_probability_error": 0.018396735191345215
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 0.3091568821321333
+    },
+    {
+      "model": "yolov8s",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolov8s_320_4d_norm_channels_int8.tflite",
+      "sha256": "40f4295c482a27b08317d5150b15cb78cf9727553d553aa79fbf98572b499961",
+      "metrics": {
+        "mAP50_95": 0.48174636739029736,
+        "AP50": 0.6879225458498194,
+        "AP75": 0.5434439376984831,
+        "AR100": 0.5130548997748486,
+        "precision_conf025_iou050_micro": 1.0,
+        "recall_conf025_iou050_micro": 0.2824074074074074,
+        "tp": 61,
+        "fp": 0,
+        "fn": 155,
+        "detections_conf0001": 8728
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 7.613666047595796,
+        "max_coordinate_error_input_px": 319.2804260253906,
+        "mean_probability_error": 0.01737283538636707,
+        "max_probability_error": 0.8683613538742065
+      },
+      "mAP50_95_delta_pp_vs_onnx": -7.071051885512386,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 2.5376935831705727,
+        "max_coordinate_error_input_px": 154.38461303710938,
+        "mean_probability_error": 0.017362069947378975,
+        "max_probability_error": 0.6312934756278992
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 1.258008348728945
+    },
+    {
+      "model": "yolo26n",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolo26n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "fb222c4963e93dbf97c3cf3aed4bc2696c781fb061d62510b30dee24258e6b0b",
+      "metrics": {
+        "mAP50_95": 0.49465529974137656,
+        "AP50": 0.6552545949948514,
+        "AP75": 0.5344258919151462,
+        "AR100": 0.5443708916119402,
+        "precision_conf025_iou050_micro": 0.8867924528301887,
+        "recall_conf025_iou050_micro": 0.4351851851851852,
+        "tp": 94,
+        "fp": 12,
+        "fn": 122,
+        "detections_conf0001": 1669
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.08234730561574301,
+        "max_coordinate_error_input_px": 13.273077011108398,
+        "mean_probability_error": 5.046762526035309e-07,
+        "max_probability_error": 0.031779348850250244
+      },
+      "mAP50_95_delta_pp_vs_onnx": 0.10961060727702754,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.06182239248639061,
+        "max_coordinate_error_input_px": 5.599527359008789,
+        "mean_probability_error": 2.8133091143986565e-07,
+        "max_probability_error": 0.03208211064338684
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 0.14135665119438534
+    },
+    {
+      "model": "yolo26n",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolo26n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "61a3e5987aee38ad166d23db841e28a4cef8a2b67f124ac48cb1bf7212adf1ec",
+      "metrics": {
+        "mAP50_95": 0.4344160323189289,
+        "AP50": 0.6471439111043136,
+        "AP75": 0.477736511276737,
+        "AR100": 0.47462676319134117,
+        "precision_conf025_iou050_micro": 0.9042553191489362,
+        "recall_conf025_iou050_micro": 0.39351851851851855,
+        "tp": 85,
+        "fp": 9,
+        "fn": 131,
+        "detections_conf0001": 1213
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 6.039103422619047,
+        "max_coordinate_error_input_px": 277.5552673339844,
+        "mean_probability_error": 3.80699366270121e-05,
+        "max_probability_error": 0.9029427766799927
+      },
+      "mAP50_95_delta_pp_vs_onnx": -5.91431613496774,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 2.7578253173828124,
+        "max_coordinate_error_input_px": 236.18898010253906,
+        "mean_probability_error": 1.957953840679866e-05,
+        "max_probability_error": 0.8676789402961731
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": -0.002053411365243729
+    },
+    {
+      "model": "yolo26s",
+      "precision": "fp16",
+      "backend": "neuron_npu",
+      "file": "yolo26s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "c3d877e26ad8ab9eb32af9b56374b83d8608210474b938d1c9d11d1f0f425436",
+      "metrics": {
+        "mAP50_95": 0.576448593751291,
+        "AP50": 0.73984351855146,
+        "AP75": 0.6072709354986202,
+        "AR100": 0.605812039977641,
+        "precision_conf025_iou050_micro": 0.8529411764705882,
+        "recall_conf025_iou050_micro": 0.5370370370370371,
+        "tp": 116,
+        "fp": 20,
+        "fn": 100,
+        "detections_conf0001": 1502
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 0.10763354051680792,
+        "max_coordinate_error_input_px": 15.05824089050293,
+        "mean_probability_error": 5.198337603360414e-07,
+        "max_probability_error": 0.07518061995506287
+      },
+      "mAP50_95_delta_pp_vs_onnx": 0.020981042193501942,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 0.06647952147892543,
+        "max_coordinate_error_input_px": 9.100017547607422,
+        "mean_probability_error": 2.862870358815902e-07,
+        "max_probability_error": 0.04511120915412903
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 0.15006839860342014
+    },
+    {
+      "model": "yolo26s",
+      "precision": "int8",
+      "backend": "neuron_npu",
+      "file": "yolo26s_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "sha256": "f72654a645844806e80749f5622add31d05503803ce728e336f498b21b8ad535",
+      "metrics": {
+        "mAP50_95": 0.4625612471300595,
+        "AP50": 0.673722202616157,
+        "AP75": 0.49522089566886324,
+        "AR100": 0.5165779371949448,
+        "precision_conf025_iou050_micro": 0.8333333333333334,
+        "recall_conf025_iou050_micro": 0.4398148148148148,
+        "tp": 95,
+        "fp": 19,
+        "fn": 121,
+        "detections_conf0001": 1678
+      },
+      "vs_onnx": {
+        "mean_coordinate_error_input_px": 8.183218340192523,
+        "max_coordinate_error_input_px": 402.0352478027344,
+        "mean_probability_error": 7.504709632069404e-05,
+        "max_probability_error": 0.9192333221435547
+      },
+      "mAP50_95_delta_pp_vs_onnx": -11.367753619929644,
+      "vs_tflite_cpu": {
+        "mean_coordinate_error_input_px": 3.111632806687128,
+        "max_coordinate_error_input_px": 297.5915222167969,
+        "mean_probability_error": 2.739824938942634e-05,
+        "max_probability_error": 0.9232346415519714
+      },
+      "mAP50_95_delta_pp_vs_tflite_cpu": 2.0994720905714805
+    }
+  ],
+  "device": "vivo V2548A / MT6993 / Android17",
+  "device_backend": "LiteRT2.3.0 MediaTek Neuron NPU-only",
+  "date": "2026-10-30",
+  "device_samples": 384,
+  "repeat_validation": {
+    "model": "yolov8s",
+    "precision": "int8",
+    "repeated_images": 32,
+    "bit_exact_device_outputs": true,
+    "files": [
+      {
+        "file": "000.bin",
+        "identical": true
+      },
+      {
+        "file": "001.bin",
+        "identical": true
+      },
+      {
+        "file": "002.bin",
+        "identical": true
+      },
+      {
+        "file": "003.bin",
+        "identical": true
+      },
+      {
+        "file": "004.bin",
+        "identical": true
+      },
+      {
+        "file": "005.bin",
+        "identical": true
+      },
+      {
+        "file": "006.bin",
+        "identical": true
+      },
+      {
+        "file": "007.bin",
+        "identical": true
+      },
+      {
+        "file": "008.bin",
+        "identical": true
+      },
+      {
+        "file": "009.bin",
+        "identical": true
+      },
+      {
+        "file": "010.bin",
+        "identical": true
+      },
+      {
+        "file": "011.bin",
+        "identical": true
+      },
+      {
+        "file": "012.bin",
+        "identical": true
+      },
+      {
+        "file": "013.bin",
+        "identical": true
+      },
+      {
+        "file": "014.bin",
+        "identical": true
+      },
+      {
+        "file": "015.bin",
+        "identical": true
+      },
+      {
+        "file": "016.bin",
+        "identical": true
+      },
+      {
+        "file": "017.bin",
+        "identical": true
+      },
+      {
+        "file": "018.bin",
+        "identical": true
+      },
+      {
+        "file": "019.bin",
+        "identical": true
+      },
+      {
+        "file": "020.bin",
+        "identical": true
+      },
+      {
+        "file": "021.bin",
+        "identical": true
+      },
+      {
+        "file": "022.bin",
+        "identical": true
+      },
+      {
+        "file": "023.bin",
+        "identical": true
+      },
+      {
+        "file": "024.bin",
+        "identical": true
+      },
+      {
+        "file": "025.bin",
+        "identical": true
+      },
+      {
+        "file": "026.bin",
+        "identical": true
+      },
+      {
+        "file": "027.bin",
+        "identical": true
+      },
+      {
+        "file": "028.bin",
+        "identical": true
+      },
+      {
+        "file": "029.bin",
+        "identical": true
+      },
+      {
+        "file": "030.bin",
+        "identical": true
+      },
+      {
+        "file": "031.bin",
+        "identical": true
+      }
+    ]
+  },
+  "findings": [
+    "FP16 Neuron mAP differences vs source ORT on this subset: -0.434 to +0.653 percentage points; this is not evidence of accuracy improvement",
+    "INT8 Neuron mAP is 5.623 to 11.368 percentage points below source ORT; much of the deficit already exists in TFLite CPU quantized models",
+    "YOLOv8s INT8 confidence anomaly: micro recall at conf0.25 falls from 51.85% ORT to 28.24% NPU, despite 48.17 mAP; 32-image device repeat bit-exact"
+  ]
+}

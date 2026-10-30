@@ -143,6 +143,29 @@ python tools/benchmark_latency.py --model path/to/model.tflite `
   --family YOLO26 --layout CHANNELS --output .deps/latency-result --device-only
 ```
 
+## 🎯 与 ONNX Runtime 的精度对照
+
+测试日期：2026-10-30。使用 v0.6.6 发布包的 12 个 **320×320** 模型，在 vivo V2548A / MT6993 / Android 17 上执行 Neuron NPU 推理，与对应原始 ONNX 的 ONNX Runtime CPU 结果比较。数据为 COCO128 中未参与 INT8 校准的 **32 张图片、216 个标注框**，12 个模型共完成 **384 次真机图片推理**。
+
+下表指标为 **mAP50–95（%）**；最后一列为 Neuron INT8 相对 ONNX Runtime 的百分点变化。
+
+| 模型 | 原始 ONNX Runtime | Neuron FP16 | Neuron INT8 | INT8 相对基线（百分点） |
+| --- | ---: | ---: | ---: | ---: |
+| YOLOv5n | 37.39 | 38.04 | 30.76 | -6.63 |
+| YOLOv5s | 49.83 | 49.60 | 44.20 | -5.62 |
+| YOLOv8n | 48.53 | 48.48 | 42.36 | -6.18 |
+| YOLOv8s | 55.25 | 54.81 | 48.17 | -7.07 |
+| YOLO26n | 49.36 | 49.47 | 43.44 | -5.91 |
+| YOLO26s | 57.62 | 57.64 | 46.26 | -11.37 |
+
+FP16 在这批图片上与 ONNX Runtime 基线接近，差值约为 −0.43～+0.65 个百分点；正向小差值不代表真实精度提升。INT8 下降约 5.62～11.37 个百分点，主机 TFLite 中间对照表明，大部分损失在转换/量化阶段已经出现。
+
+**YOLOv8s INT8 另有置信度异常**：固定置信度阈值 0.25、匹配 IoU 0.50 时，micro Recall 从 ONNX Runtime 的 **51.85% 降至 28.24%**。同一批 32 张图的 NPU 重复输出逐字节一致，问题可复现；不能仅凭总体 AP 判断部署效果。
+
+所有后端使用相同的 OpenCV letterbox 基础输入和统一后处理：类别内 NMS IoU 0.45，AP 计算的置信度下限为 0.001。该测试隔离比较模型与后端，未包含 Android Bitmap/摄像头预处理和 Java 解码器的逐项一致性验证。**32 张图的小样本结果不是完整 COCO val2017 成绩**；COCO128 来自训练子集，可能与源权重训练数据重叠。v5 原始 ONNX 基线为 FLOAT16，v8/26 为 FLOAT32；Neuron FP16 指 FP16 权重、FLOAT32 I/O。
+
+[完整精度报告：主机中间对照、AP50、Precision/Recall 与限制](ACCURACY_BENCHMARK.md) · [原始指标、模型/图片哈希及数值误差](benchmarks/2026-10-30-accuracy-320.json)
+
 ## ⚠️ 平台边界
 
 当前 Android 推理路径绑定 MediaTek Neuron/LiteRT NPU runtime，模型加载会验证 MediaTek 编译插件，并且不会静默切换 CPU。高通平台需要自行接入对应版本的 **QNN Delegate**，适配输入输出张量、量化参数、图编译和 YOLO 后处理验证；本项目的 Neuron 测速数据不适用于高通设备。
