@@ -30,11 +30,11 @@
 - **Python**：模型转换、ONNX/TFLite 检查、校准集处理和主机精度验证脚本。
 - Ultralytics、ONNX Runtime、onnx2tf、TensorFlow Lite 等转换依赖由 `model-exporter/requirements-*.txt` 管理。
 
-GitHub 的语言统计因此应同时包含 Java 和 Python：Java 是 Android 主体，Python 是独立的模型转换和验证工具。根目录 `.gitattributes` 已明确告诉 GitHub Linguist 如何识别两类源码。
+GitHub 的语言统计因此应同时包含 Java 和 Python：Java 是 Android 主体，Python 是独立的模型转换和验证工具。
 
 ## Java 模块
 
-Android Java 源码位于 `app/src/main/java/com/fydnn/dimensity/`：
+Android Java 源码位于 `app/src/main/java/`：
 
 | 文件 | 职责 |
 | --- | --- |
@@ -94,7 +94,7 @@ INT8 导出至少需要 32 张具有代表性的 JPG/PNG 校准图片。转换�
 
 ## 天玑 9500 真机测速
 
-以下数据已合并到主 README，独立原始记录见 [`SPEED_BENCHMARK.md`](SPEED_BENCHMARK.md)。测试设备为 vivo V2548A（MT6993，Android 17），使用 MediaTek Neuron/LiteRT NPU，未启用 CPU 回退。同一张 640x480 JPEG，5 次预热、50 次采样；所有数字单位为毫秒，格式为 **平均 / P50 / P95**。
+独立测速表见 [`SPEED_BENCHMARK.md`](SPEED_BENCHMARK.md)。测试设备为 vivo V2548A（MT6993，Android 17），使用 MediaTek Neuron/LiteRT NPU，未启用 CPU 回退。同一张 640x480 JPEG，5 次预热、50 次采样；所有数字单位为毫秒，格式为 **平均 / P50 / P95**。
 
 | 模型 | 精度 | 输入 | NPU/读回 | 图片端到端 |
 | --- | --- | ---: | ---: | ---: |
@@ -113,7 +113,7 @@ INT8 导出至少需要 32 张具有代表性的 JPG/PNG 校准图片。转换�
 
 NPU/读回包含一次 NPU 执行和同步输出读回；图片端到端还包含 JPEG 解码、letterbox/RGB 预处理和后处理，不包含摄像头采集、UDP 或屏幕显示。INT8 本轮编译和执行全部通过，但速度不代表精度与 FP16 一致，部署前应使用实际数据集检查精度。YOLOv8n INT8 的单图 NPU/主机数值对照曾出现明显偏差，需要单独校准和复核。
 
-YOLOv8s FP16、YOLO26n/s 的旧基线后处理在当前测试图上候选数量较大，超过了单轮测试时限，因此表中报告实际优化链路和 NPU 数据，不把超时旧实现作为速度对照。FP16 在本项目中表示 FP16 权重存储、FLOAT32 输入输出，实际算术精度由 Neuron 驱动决定。
+YOLOv8s FP16、YOLO26n/s 的完整图片端到端链路已纳入表格。FP16 在本项目中表示 FP16 权重存储、FLOAT32 输入输出，实际算术精度由 Neuron 驱动决定。
 
 复测示例：
 
