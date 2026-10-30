@@ -1,4 +1,4 @@
-# INT8 编译修复 · FYDNN 0.4.1
+# INT8 编译修
 
 2026-10-27 已在 vivo X300s（V2548A / MT6993 / Android 17 / Neuron 9.0.11）复现并验证。
 
