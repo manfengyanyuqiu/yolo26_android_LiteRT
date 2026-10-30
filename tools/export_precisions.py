@@ -21,7 +21,7 @@ if __name__=='__main__':
         suffix={'fp32':'fp32','fp16':'fp32io_fp16weights','int8':'int8'}[precision]
         destination=a.output/(a.name+'_'+suffix+'.tflite')
         if precision=='int8':
-            quantize(a.saved_model,destination,a.calibration_dir,a.size,disable_per_channel=True)
+            quantize(a.saved_model,destination,a.calibration_dir,a.size,disable_per_channel=True,neuron_head_sigmoid=True)
         else:
             converter=tf.lite.TFLiteConverter.from_saved_model(str(a.saved_model))
             if precision=='fp16':

@@ -40,3 +40,15 @@ python tools/model_exporter.py `
 ```
 
 主机转换通过只说明 TFLite 文件结构和主机参考输出通过；MediaTek Neuron 编译、真机兼容性和速度需要在目标设备上单独验证。高通平台需要自行接入 QNN Delegate。
+
+## Neuron INT8 分类头处理
+
+图形界面和 `model_exporter.py` 流程自动对匹配拓扑的 YOLOv8/YOLO26 INT8 分类头执行 Sigmoid 布局变换。Sigmoid 是逐元素操作，可移至三个 NHWC 类别卷积输出，随后再转置、重排和拼接；模型的 INT8 输入输出、量化参数与检测解码约定保持一致。报告中的 `neuron_class_sigmoid` 记录是否应用。该处理仅针对独立分类头。YOLOv5 和框/类别先合并再切片的拓扑不匹配，保持原图并在报告中明确注明不适用；发现不支持或共享分支时明确报错。
+
+已有全整数模型可单独处理，输出使用新文件名：
+
+```powershell
+python tools/fix_neuron_int8.py path/to/original.tflite --output path/to/headsigmoid_int8.tflite
+```
+
+底层 `convert_model.py` 可使用 `--npu-int8-head-sigmoid` 开启同一处理。该变换针对分类头，不替代校准和目标设备精度验证；转换成功仍需真机 Neuron 编译、数值及画框检查。

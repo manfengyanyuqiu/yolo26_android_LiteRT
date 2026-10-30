@@ -1,0 +1,930 @@
+{
+  "date": "2026-10-30",
+  "backend": "LiteRT 2.3.0 MediaTek Neuron NPU only",
+  "device": "vivo V2548A / MT6993 / Android 17",
+  "method": "Move INT8 class Sigmoid before NHWC head transpose/reshape/concatenation; preserve external tensors and quantization",
+  "host_reference": "Original vs transformed model: bit-exact INT8 output on 32 held-out images per model",
+  "device_reference": "8 held-out images per model on Neuron; numerical and candidate-count comparison, not mAP",
+  "limitations": "Residual host/NPU numerical differences remain; small image set does not establish deployment accuracy",
+  "validation": [
+    {
+      "model": "yolov8n",
+      "source_sha256": "18d2daad40c12b96e0a019e7de48635e6c6aaebb8d336b8e4d18accfedb8f9fb",
+      "fixed_sha256": "baf042fad965da8df83424a95d481c2a3a5be98970442b62bdbd95989d20cf89",
+      "host_bit_exact_images": [
+        "000000000009.jpg",
+        "000000000036.jpg",
+        "000000000064.jpg",
+        "000000000074.jpg",
+        "000000000086.jpg",
+        "000000000109.jpg",
+        "000000000133.jpg",
+        "000000000143.jpg",
+        "000000000154.jpg",
+        "000000000194.jpg",
+        "000000000241.jpg",
+        "000000000260.jpg",
+        "000000000307.jpg",
+        "000000000315.jpg",
+        "000000000328.jpg",
+        "000000000357.jpg",
+        "000000000370.jpg",
+        "000000000389.jpg",
+        "000000000400.jpg",
+        "000000000428.jpg",
+        "000000000443.jpg",
+        "000000000471.jpg",
+        "000000000488.jpg",
+        "000000000508.jpg",
+        "000000000529.jpg",
+        "000000000540.jpg",
+        "000000000562.jpg",
+        "000000000575.jpg",
+        "000000000590.jpg",
+        "000000000605.jpg",
+        "000000000625.jpg",
+        "000000000636.jpg"
+      ],
+      "device_samples": [
+        {
+          "tag": "yolov8n-validation-0",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.00035580177791416645,
+          "max_error": 0.5274237990379333,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6233190298080444,
+            1.2892581224441528
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6286465525627136,
+            1.27327561378479
+          ],
+          "image": "000000000009.jpg",
+          "host_detections": 5,
+          "npu_detections": 4,
+          "score_mean_error": 2.9650145734194666e-05,
+          "score_max_error": 0.5274237990379333
+        },
+        {
+          "tag": "yolov8n-validation-1",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.00031309708720073104,
+          "max_error": 0.2397380769252777,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6233190298080444,
+            1.0282100439071655
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6233190298080444,
+            0.9962449073791504
+          ],
+          "image": "000000000036.jpg",
+          "host_detections": 4,
+          "npu_detections": 3,
+          "score_mean_error": 1.3065091479802504e-05,
+          "score_max_error": 0.11720527708530426
+        },
+        {
+          "tag": "yolov8n-validation-2",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.0003352044732309878,
+          "max_error": 0.20777302980422974,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.1187777519226074
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.038865089416504
+          ],
+          "image": "000000000064.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 1.2177171811345033e-05,
+          "score_max_error": 0.1598253846168518
+        },
+        {
+          "tag": "yolov8n-validation-3",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.000370751426089555,
+          "max_error": 0.6393015384674072,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6020089387893677,
+            1.0921401977539062
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6020089387893677,
+            1.0548475980758667
+          ],
+          "image": "000000000074.jpg",
+          "host_detections": 6,
+          "npu_detections": 7,
+          "score_mean_error": 3.684863622765988e-05,
+          "score_max_error": 0.6393015384674072
+        },
+        {
+          "tag": "yolov8n-validation-4",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.000387724518077448,
+          "max_error": 0.35161587595939636,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6020089387893677,
+            0.9962449073791504
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            0.9962449073791504
+          ],
+          "image": "000000000086.jpg",
+          "host_detections": 3,
+          "npu_detections": 2,
+          "score_mean_error": 2.4449482225463726e-05,
+          "score_max_error": 0.35161587595939636
+        },
+        {
+          "tag": "yolov8n-validation-5",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.00037126484676264226,
+          "max_error": 0.6712666153907776,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.0282100439071655
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.076157569885254
+          ],
+          "image": "000000000109.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 1.3762742128164973e-05,
+          "score_max_error": 0.14384284615516663
+        },
+        {
+          "tag": "yolov8n-validation-6",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.000394670816604048,
+          "max_error": 0.2610481381416321,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6233190298080444,
+            1.2519655227661133
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6233190298080444,
+            1.2359830141067505
+          ],
+          "image": "000000000133.jpg",
+          "host_detections": 1,
+          "npu_detections": 0,
+          "score_mean_error": 1.2557708032545634e-05,
+          "score_max_error": 0.07458518445491791
+        },
+        {
+          "tag": "yolov8n-validation-7",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005327512975782156,
+          "zero": -128,
+          "mean_error": 0.00036736883339472115,
+          "max_error": 0.21842807531356812,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.3105682134628296
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6073364615440369,
+            1.2839306592941284
+          ],
+          "image": "000000000143.jpg",
+          "host_detections": 4,
+          "npu_detections": 4,
+          "score_mean_error": 2.755719469860196e-05,
+          "score_max_error": 0.18646296858787537
+        }
+      ]
+    },
+    {
+      "model": "yolo26n",
+      "source_sha256": "8c572a13092a4d0e3131f797e0f1b8c9f570968feb06c1aed5e9308b65b52d5f",
+      "fixed_sha256": "61a3e5987aee38ad166d23db841e28a4cef8a2b67f124ac48cb1bf7212adf1ec",
+      "host_bit_exact_images": [
+        "000000000009.jpg",
+        "000000000036.jpg",
+        "000000000064.jpg",
+        "000000000074.jpg",
+        "000000000086.jpg",
+        "000000000109.jpg",
+        "000000000133.jpg",
+        "000000000143.jpg",
+        "000000000154.jpg",
+        "000000000194.jpg",
+        "000000000241.jpg",
+        "000000000260.jpg",
+        "000000000307.jpg",
+        "000000000315.jpg",
+        "000000000328.jpg",
+        "000000000357.jpg",
+        "000000000370.jpg",
+        "000000000389.jpg",
+        "000000000400.jpg",
+        "000000000428.jpg",
+        "000000000443.jpg",
+        "000000000471.jpg",
+        "000000000488.jpg",
+        "000000000508.jpg",
+        "000000000529.jpg",
+        "000000000540.jpg",
+        "000000000562.jpg",
+        "000000000575.jpg",
+        "000000000590.jpg",
+        "000000000605.jpg",
+        "000000000625.jpg",
+        "000000000636.jpg"
+      ],
+      "device_samples": [
+        {
+          "tag": "yolo26n-validation-0",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.0004029595002066344,
+          "max_error": 0.5915992856025696,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.1099529266357422
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.0986844301223755
+          ],
+          "image": "000000000009.jpg",
+          "host_detections": 4,
+          "npu_detections": 4,
+          "score_mean_error": 4.826028089155443e-05,
+          "score_max_error": 0.5915992856025696
+        },
+        {
+          "tag": "yolo26n-validation-1",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.00035693348036147654,
+          "max_error": 0.26481112837791443,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.301518440246582
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.3127870559692383
+          ],
+          "image": "000000000036.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 4.494008408073569e-06,
+          "score_max_error": 0.10705125331878662
+        },
+        {
+          "tag": "yolo26n-validation-2",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.0003991266421508044,
+          "max_error": 0.3211539089679718,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1099529266357422
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1719300746917725
+          ],
+          "image": "000000000064.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 2.3677386707277037e-05,
+          "score_max_error": 0.3211539089679718
+        },
+        {
+          "tag": "yolo26n-validation-3",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.00044135170173831284,
+          "max_error": 0.38876524567604065,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1719300746917725
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1606614589691162
+          ],
+          "image": "000000000074.jpg",
+          "host_detections": 3,
+          "npu_detections": 3,
+          "score_mean_error": 1.7003449102048762e-05,
+          "score_max_error": 0.38876524567604065
+        },
+        {
+          "tag": "yolo26n-validation-4",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.0004326640337239951,
+          "max_error": 0.24790823459625244,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6085021495819092,
+            1.1099529266357422
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6085021495819092,
+            1.1099529266357422
+          ],
+          "image": "000000000086.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 1.2341754882072564e-05,
+          "score_max_error": 0.1802968978881836
+        },
+        {
+          "tag": "yolo26n-validation-5",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.00047220618580468,
+          "max_error": 0.36059385538101196,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6085021495819092,
+            1.1606614589691162
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6141363978385925,
+            1.1719300746917725
+          ],
+          "image": "000000000109.jpg",
+          "host_detections": 1,
+          "npu_detections": 0,
+          "score_mean_error": 1.0631348231981974e-05,
+          "score_max_error": 0.09014846384525299
+        },
+        {
+          "tag": "yolo26n-validation-6",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.00042199587915092707,
+          "max_error": 0.6592106819152832,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.1606614589691162
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6197707056999207,
+            1.1606614589691162
+          ],
+          "image": "000000000133.jpg",
+          "host_detections": 1,
+          "npu_detections": 1,
+          "score_mean_error": 1.190576767839957e-05,
+          "score_max_error": 0.16339407861232758
+        },
+        {
+          "tag": "yolo26n-validation-7",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.005634278990328312,
+          "zero": -128,
+          "mean_error": 0.0004430765984579921,
+          "max_error": 0.5803307294845581,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1719300746917725
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.602867841720581,
+            1.1719300746917725
+          ],
+          "image": "000000000143.jpg",
+          "host_detections": 4,
+          "npu_detections": 5,
+          "score_mean_error": 4.420226105139591e-05,
+          "score_max_error": 0.3662281036376953
+        }
+      ]
+    },
+    {
+      "model": "yolo26s",
+      "source_sha256": "b7216a33325bb0736fdb803e8b908865c89cef1e568c9a28e4ab8e20b5935cb1",
+      "fixed_sha256": "f72654a645844806e80749f5622add31d05503803ce728e336f498b21b8ad535",
+      "host_bit_exact_images": [
+        "000000000009.jpg",
+        "000000000036.jpg",
+        "000000000064.jpg",
+        "000000000074.jpg",
+        "000000000086.jpg",
+        "000000000109.jpg",
+        "000000000133.jpg",
+        "000000000143.jpg",
+        "000000000154.jpg",
+        "000000000194.jpg",
+        "000000000241.jpg",
+        "000000000260.jpg",
+        "000000000307.jpg",
+        "000000000315.jpg",
+        "000000000328.jpg",
+        "000000000357.jpg",
+        "000000000370.jpg",
+        "000000000389.jpg",
+        "000000000400.jpg",
+        "000000000428.jpg",
+        "000000000443.jpg",
+        "000000000471.jpg",
+        "000000000488.jpg",
+        "000000000508.jpg",
+        "000000000529.jpg",
+        "000000000540.jpg",
+        "000000000562.jpg",
+        "000000000575.jpg",
+        "000000000590.jpg",
+        "000000000605.jpg",
+        "000000000625.jpg",
+        "000000000636.jpg"
+      ],
+      "device_samples": [
+        {
+          "tag": "yolo26s-validation-0",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.0004646964371204376,
+          "max_error": 0.4852035641670227,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6267213225364685,
+            1.664517879486084
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6199823617935181,
+            1.664517879486084
+          ],
+          "image": "000000000009.jpg",
+          "host_detections": 5,
+          "npu_detections": 5,
+          "score_mean_error": 3.1047253287397325e-05,
+          "score_max_error": 0.4312920868396759
+        },
+        {
+          "tag": "yolo26s-validation-1",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.00047436170279979706,
+          "max_error": 0.7817169427871704,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6199823617935181,
+            1.084969162940979
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6199823617935181,
+            1.084969162940979
+          ],
+          "image": "000000000036.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 9.586943633621559e-06,
+          "score_max_error": 0.7817169427871704
+        },
+        {
+          "tag": "yolo26s-validation-2",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.0004591952601913363,
+          "max_error": 0.25607967376708984,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.084969162940979
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.084969162940979
+          ],
+          "image": "000000000064.jpg",
+          "host_detections": 2,
+          "npu_detections": 2,
+          "score_mean_error": 2.4147862859535962e-05,
+          "score_max_error": 0.25607967376708984
+        },
+        {
+          "tag": "yolo26s-validation-3",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.00046099076280370355,
+          "max_error": 0.2628186047077179,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.3949602842330933
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.4758275747299194
+          ],
+          "image": "000000000074.jpg",
+          "host_detections": 7,
+          "npu_detections": 7,
+          "score_mean_error": 1.8732644093688577e-05,
+          "score_max_error": 0.13477879762649536
+        },
+        {
+          "tag": "yolo26s-validation-4",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.0005026697763241827,
+          "max_error": 0.5593318939208984,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.2062700986862183
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.2197479009628296
+          ],
+          "image": "000000000086.jpg",
+          "host_detections": 3,
+          "npu_detections": 2,
+          "score_mean_error": 3.51788621628657e-05,
+          "score_max_error": 0.5593318939208984
+        },
+        {
+          "tag": "yolo26s-validation-5",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.00045243347994983196,
+          "max_error": 0.43803107738494873,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.2264869213104248
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.253442645072937
+          ],
+          "image": "000000000109.jpg",
+          "host_detections": 1,
+          "npu_detections": 3,
+          "score_mean_error": 1.7288586604990996e-05,
+          "score_max_error": 0.08760620653629303
+        },
+        {
+          "tag": "yolo26s-validation-6",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.0005371668376028538,
+          "max_error": 0.3639026880264282,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.6132434606552124,
+            1.2264869213104248
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.6132434606552124,
+            1.368004560470581
+          ],
+          "image": "000000000133.jpg",
+          "host_detections": 2,
+          "npu_detections": 3,
+          "score_mean_error": 2.7918460546061397e-05,
+          "score_max_error": 0.1819513440132141
+        },
+        {
+          "tag": "yolo26s-validation-7",
+          "shape": [
+            1,
+            1,
+            84,
+            2100
+          ],
+          "scale": 0.006738938856869936,
+          "zero": -127,
+          "mean_error": 0.0004649638431146741,
+          "max_error": 0.42455315589904785,
+          "host_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.4758275747299194
+          ],
+          "npu_quantiles": [
+            0.0,
+            0.0,
+            0.5997655391693115,
+            1.462349772453308
+          ],
+          "image": "000000000143.jpg",
+          "host_detections": 7,
+          "npu_detections": 6,
+          "score_mean_error": 5.0943170208483934e-05,
+          "score_max_error": 0.42455315589904785
+        }
+      ]
+    }
+  ],
+  "ui_benchmark": {
+    "run_id": "20261030_200809_headfix",
+    "app_version": "0.6.5",
+    "backend": "LiteRT 2.3.0 MediaTek Neuron NPU only",
+    "device": "vivo V2548A / MT6993 / Android 17",
+    "records": [
+      {
+        "model": "yolov8n",
+        "precision": "int8",
+        "file": "models/yolov8n_320_4d_norm_channels_headsigmoid_int8.tflite",
+        "sha256": "baf042fad965da8df83424a95d481c2a3a5be98970442b62bdbd95989d20cf89",
+        "detections": 5,
+        "gallery_file": "20261030_200809_headfix_yolov8n_320_4d_norm_channels_headsigmoid_int8.png",
+        "gallery_uri": "content://media/external/images/media/1000049473",
+        "warmup": 5,
+        "samples": 50,
+        "npu_readback_ms": {
+          "mean": 1.28,
+          "p50": 1.27,
+          "p95": 1.95
+        },
+        "image_pipeline_ms": {
+          "mean": 3.0,
+          "p50": 2.28,
+          "p95": 4.96
+        }
+      },
+      {
+        "model": "yolo26n",
+        "precision": "int8",
+        "file": "models/yolo26n_320_4d_norm_channels_headsigmoid_int8.tflite",
+        "sha256": "61a3e5987aee38ad166d23db841e28a4cef8a2b67f124ac48cb1bf7212adf1ec",
+        "detections": 4,
+        "gallery_file": "20261030_200809_headfix_yolo26n_320_4d_norm_channels_headsigmoid_int8.png",
+        "gallery_uri": "content://media/external/images/media/1000049476",
+        "warmup": 5,
+        "samples": 50,
+        "npu_readback_ms": {
+          "mean": 1.49,
+          "p50": 1.5,
+          "p95": 1.81
+        },
+        "image_pipeline_ms": {
+          "mean": 3.93,
+          "p50": 3.88,
+          "p95": 4.62
+        }
+      },
+      {
+        "model": "yolo26s",
+        "precision": "int8",
+        "file": "models/yolo26s_320_4d_norm_channels_headsigmoid_int8.tflite",
+        "sha256": "f72654a645844806e80749f5622add31d05503803ce728e336f498b21b8ad535",
+        "detections": 4,
+        "gallery_file": "20261030_200809_headfix_yolo26s_320_4d_norm_channels_headsigmoid_int8.png",
+        "gallery_uri": "content://media/external/images/media/1000049479",
+        "warmup": 5,
+        "samples": 50,
+        "npu_readback_ms": {
+          "mean": 1.63,
+          "p50": 1.65,
+          "p95": 2.29
+        },
+        "image_pipeline_ms": {
+          "mean": 4.01,
+          "p50": 4.1,
+          "p95": 5.13
+        }
+      }
+    ]
+  },
+  "gallery_verified": {
+    "is_pending": 0,
+    "directory": "Pictures/YOLO_NPU_Tests"
+  },
+  "timing_note": "PNG headers show the initial single detection before benchmark warmup; benchmark means use separate 5-warmup/50-sample runs. UI timing text is rounded to 0.01 ms."
+}

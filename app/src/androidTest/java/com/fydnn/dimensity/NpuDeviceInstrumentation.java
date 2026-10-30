@@ -25,6 +25,10 @@ public final class NpuDeviceInstrumentation extends Instrumentation {
         Bundle result = new Bundle();
         File report = new File(getTargetContext().getFilesDir(), "device-test.txt");
         try (PrintWriter writer = new PrintWriter(report)) {
+            if(arguments.containsKey("probeModel")) {
+                NpuTensorProbe.run(this,arguments,writer);
+                result.putString("stream","NPU tensor probe PASS");finish(Activity.RESULT_OK,result);return;
+            }
             if(Boolean.parseBoolean(arguments.getString("importUi","false"))) {
                 ImportDeviceCheck.run(this,arguments,writer);
                 writer.println("PASS");writer.flush();

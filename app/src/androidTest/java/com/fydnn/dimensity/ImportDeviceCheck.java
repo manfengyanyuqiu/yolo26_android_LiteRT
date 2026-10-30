@@ -4,6 +4,8 @@ import android.app.Instrumentation;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -42,7 +44,15 @@ final class ImportDeviceCheck {
         Uri model=null,image=null;
         try {
             String filename=args.getString("filename");
-            model=document(test,new File(test.getTargetContext().getFilesDir(),args.getString("model")),filename,"application/octet-stream");
+            File source=new File(Boolean.parseBoolean(args.getString("externalModel","false"))
+                    ? test.getTargetContext().getExternalFilesDir("diagnostics") : test.getTargetContext().getFilesDir(),args.getString("model"));
+            String expectedHash=args.getString("modelSha256");
+            if(expectedHash!=null) {
+                byte[] hash=java.security.MessageDigest.getInstance("SHA-256").digest(java.nio.file.Files.readAllBytes(source.toPath()));
+                StringBuilder hex=new StringBuilder();for(byte b:hash)hex.append(String.format(java.util.Locale.ROOT,"%02x",b&255));
+                if(!expectedHash.contentEquals(hex))throw new AssertionError("Staged model SHA256 mismatch");
+            }
+            model=document(test,source,filename,"application/octet-stream");
             image=document(test,new File(test.getTargetContext().getFilesDir(),args.getString("image")),"import-check.jpg","image/jpeg");
             final Uri selectedModel=model,selectedImage=image;
             test.runOnMainSync(()->activity.onActivityResult(1,Activity.RESULT_OK,new Intent().setData(selectedModel)));
@@ -67,6 +77,48 @@ final class ImportDeviceCheck {
             String status=((TextView)field(activity,"status")).getText().toString();
             if(!status.contains("个目标"))throw new AssertionError("Detect button failed: "+status);
             writer.println(status);writer.flush();
+            String tensorTag=args.getString("dumpTensors");
+            if(tensorTag!=null) {
+                if(!tensorTag.matches("[A-Za-z0-9_-]+"))throw new IllegalArgumentException("Invalid tensor tag");
+                File directory=test.getTargetContext().getExternalFilesDir("diagnostics");
+                try(org.tensorflow.lite.Interpreter metadata=new org.tensorflow.lite.Interpreter(source)) {
+                    for(String name:new String[]{"inputBuffer","outputBuffer"}) {
+                        Field f=NpuDetector.class.getDeclaredField(name);f.setAccessible(true);
+                        com.google.ai.edge.litert.TensorBuffer buffer=(com.google.ai.edge.litert.TensorBuffer)f.get(detector);
+                        var spec=name.equals("inputBuffer")?metadata.getInputTensor(0):metadata.getOutputTensor(0);
+                        byte[] bytes;
+                        if(spec.dataType()==org.tensorflow.lite.DataType.FLOAT32) {
+                            float[] values=buffer.readFloat();
+                            java.nio.ByteBuffer raw=java.nio.ByteBuffer.allocate(values.length*4).order(java.nio.ByteOrder.LITTLE_ENDIAN);
+                            raw.asFloatBuffer().put(values);bytes=raw.array();
+                        }else bytes=buffer.readInt8();
+                        File destination=new File(directory,tensorTag+"_"+name+".bin");
+                        try(FileOutputStream stream=new FileOutputStream(destination)){stream.write(bytes);}
+                        writer.println("tensor="+destination.getAbsolutePath());writer.flush();
+                    }
+                }
+            }
+            if(Boolean.parseBoolean(args.getString("saveGallery","false"))) {
+                Bitmap[] snapshot=new Bitmap[1];
+                test.runOnMainSync(()->{
+                    try {
+                        ImageView preview=(ImageView)field(activity,"preview");
+                        snapshot[0]=((BitmapDrawable)preview.getDrawable()).getBitmap().copy(Bitmap.Config.ARGB_8888,false);
+                    }catch(Exception e){throw new IllegalStateException("Result preview snapshot failed",e);}
+                });
+                try {
+                    Uri saved=GalleryResultImage.save(test.getTargetContext(),snapshot[0],filename,status,
+                            detector.width,detector.height,args.getString("runId"));
+                    writer.println("gallery_uri="+saved);writer.flush();
+                }finally{snapshot[0].recycle();}
+            }
+            if(Boolean.parseBoolean(args.getString("benchmarkUi","false"))) {
+                Button benchmark=(Button)field(activity,"benchmark");
+                test.runOnMainSync(benchmark::performClick);idle(test,activity);
+                String timing=((TextView)field(activity,"status")).getText().toString();
+                if(!timing.contains("50 次"))throw new AssertionError("Benchmark failed: "+timing);
+                writer.println("benchmark_ui="+timing);writer.flush();
+            }
         } finally {
             var resolver=test.getTargetContext().getContentResolver();
             if(model!=null)resolver.delete(model,null,null);

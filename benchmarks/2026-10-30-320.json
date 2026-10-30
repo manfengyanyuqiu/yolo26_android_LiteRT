@@ -47,7 +47,8 @@
         "p50": 5.774336,
         "p95": 8.349568
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov5n",
@@ -75,7 +76,8 @@
         "p50": 3.458048,
         "p95": 4.588032
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov5s",
@@ -103,7 +105,8 @@
         "p50": 7.058304,
         "p95": 9.202432
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov5s",
@@ -131,7 +134,8 @@
         "p50": 4.663808,
         "p95": 5.867648
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov8n",
@@ -159,7 +163,8 @@
         "p50": 5.505536,
         "p95": 7.257088
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov8n",
@@ -173,21 +178,26 @@
       "layout": "CHANNELS",
       "classes": 80,
       "normalized_coordinates": true,
-      "model_sha256": "18d2daad40c12b96e0a019e7de48635e6c6aaebb8d336b8e4d18accfedb8f9fb",
+      "model_sha256": "baf042fad965da8df83424a95d481c2a3a5be98970442b62bdbd95989d20cf89",
       "image_sha256": "3b0bb6bebad60a3329f1e3484434872e86998aeb7750d779b308e4a064868c2c",
       "warmup": 5,
       "samples": 50,
       "npu_readback_ms": {
-        "mean": 1.59423744,
-        "p50": 1.621376,
-        "p95": 2.100992
+        "mean": 1.28,
+        "p50": 1.27,
+        "p95": 1.95
       },
       "image_pipeline_ms": {
-        "mean": 5.300451839999999,
-        "p50": 5.074304,
-        "p95": 7.433728
+        "mean": 3.0,
+        "p50": 2.28,
+        "p95": 4.96
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "headfix",
+      "file": "models/yolov8n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "timing_source": "Actual release UI, rounded to 0.01 ms",
+      "detections_on_test_image": 5,
+      "validation_report": "2026-10-30-int8-headfix.json"
     },
     {
       "model": "yolov8s",
@@ -215,7 +225,8 @@
         "p50": 8.1184,
         "p95": 9.429632
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolov8s",
@@ -243,7 +254,8 @@
         "p50": 6.644736,
         "p95": 8.177792
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolo26n",
@@ -271,7 +283,8 @@
         "p50": 6.32,
         "p95": 9.153024
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolo26n",
@@ -285,21 +298,26 @@
       "layout": "CHANNELS",
       "classes": 80,
       "normalized_coordinates": true,
-      "model_sha256": "8c572a13092a4d0e3131f797e0f1b8c9f570968feb06c1aed5e9308b65b52d5f",
+      "model_sha256": "61a3e5987aee38ad166d23db841e28a4cef8a2b67f124ac48cb1bf7212adf1ec",
       "image_sha256": "3b0bb6bebad60a3329f1e3484434872e86998aeb7750d779b308e4a064868c2c",
       "warmup": 5,
       "samples": 50,
       "npu_readback_ms": {
-        "mean": 1.3380249599999998,
-        "p50": 1.283328,
-        "p95": 1.6832
+        "mean": 1.49,
+        "p50": 1.5,
+        "p95": 1.81
       },
       "image_pipeline_ms": {
-        "mean": 5.3858304,
-        "p50": 5.308032,
-        "p95": 5.644928
+        "mean": 3.93,
+        "p50": 3.88,
+        "p95": 4.62
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "headfix",
+      "file": "models/yolo26n_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "timing_source": "Actual release UI, rounded to 0.01 ms",
+      "detections_on_test_image": 4,
+      "validation_report": "2026-10-30-int8-headfix.json"
     },
     {
       "model": "yolo26s",
@@ -327,7 +345,8 @@
         "p50": 8.329728,
         "p95": 9.435008
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "original"
     },
     {
       "model": "yolo26s",
@@ -341,21 +360,31 @@
       "layout": "CHANNELS",
       "classes": 80,
       "normalized_coordinates": true,
-      "model_sha256": "b7216a33325bb0736fdb803e8b908865c89cef1e568c9a28e4ab8e20b5935cb1",
+      "model_sha256": "f72654a645844806e80749f5622add31d05503803ce728e336f498b21b8ad535",
       "image_sha256": "3b0bb6bebad60a3329f1e3484434872e86998aeb7750d779b308e4a064868c2c",
       "warmup": 5,
       "samples": 50,
       "npu_readback_ms": {
-        "mean": 2.50259712,
-        "p50": 2.390272,
-        "p95": 3.170176
+        "mean": 1.63,
+        "p50": 1.65,
+        "p95": 2.29
       },
       "image_pipeline_ms": {
-        "mean": 7.40386048,
-        "p50": 7.220224,
-        "p95": 9.513728
+        "mean": 4.01,
+        "p50": 4.1,
+        "p95": 5.13
       },
-      "result": "PASS"
+      "result": "PASS",
+      "session": "headfix",
+      "file": "models/yolo26s_320_4d_norm_channels_headsigmoid_int8.tflite",
+      "timing_source": "Actual release UI, rounded to 0.01 ms",
+      "detections_on_test_image": 4,
+      "validation_report": "2026-10-30-int8-headfix.json"
     }
-  ]
+  ],
+  "sessions": {
+    "original": "2026-10-30 earlier session, 9 unchanged models",
+    "headfix": "20261030_200809_headfix"
+  },
+  "accuracy_note": "Residual host/NPU numerical differences remain; small image set does not establish deployment accuracy"
 }

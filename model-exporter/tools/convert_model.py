@@ -223,6 +223,8 @@ def main():
     parser.add_argument('--calibration-dir', type=Path)
     parser.add_argument('--npu-int8-per-tensor', action='store_true',
                         help='Use per-tensor INT8 weight scales for MediaTek Neuron compatibility')
+    parser.add_argument('--npu-int8-head-sigmoid', action='store_true',
+                        help='Keep decoded class Sigmoid in NHWC heads for MediaTek Neuron INT8')
     parser.add_argument('--keep-saved-model', action='store_true')
     parser.add_argument('--fp32-intermediate-only', action='store_true',
                         help='Validate only the intermediate FP32 model; final precision exports require separate checks')
@@ -410,7 +412,7 @@ def main():
     if calibration_dir:
         from quantize_yolo import quantize
         quantize(output, output / f'{stem}_int8.tflite', calibration_dir, args.size,
-                 disable_per_channel=args.npu_int8_per_tensor)
+                 disable_per_channel=args.npu_int8_per_tensor, neuron_head_sigmoid=args.npu_int8_head_sigmoid)
     prepared.unlink(missing_ok=True)
     (output/'calibration_image_sample_data_20x128x128x3_float32.npy').unlink(missing_ok=True)
     if not args.keep_saved_model:

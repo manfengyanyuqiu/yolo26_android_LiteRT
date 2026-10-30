@@ -27,7 +27,7 @@ def dataset_split(directory):
     return calibration, evaluation
 
 
-def quantize(saved_model, destination, directory, size, disable_per_channel=False):
+def quantize(saved_model, destination, directory, size, disable_per_channel=False, neuron_head_sigmoid=False):
     calibration, evaluation = dataset_split(directory)
     def representative():
         for image in calibration:
@@ -42,6 +42,10 @@ def quantize(saved_model, destination, directory, size, disable_per_channel=Fals
     # Keep this opt-in so general-purpose exports retain the accuracy benefit.
     converter._experimental_disable_per_channel = disable_per_channel
     converted = converter.convert()
+    sigmoid_report = {'applied': False, 'reason': 'Neuron class-head transform not requested'}
+    if neuron_head_sigmoid:
+        from fix_neuron_int8 import stabilize_head_sigmoid
+        converted, sigmoid_report = stabilize_head_sigmoid(converted)
     # Reject float islands in the actual flatbuffer (int32 shape/bias tensors are normal).
     interpreter = tf.lite.Interpreter(model_content=converted, num_threads=1)
     interpreter.allocate_tensors()
@@ -56,6 +60,7 @@ def quantize(saved_model, destination, directory, size, disable_per_channel=Fals
                    if disable_per_channel else
                    'TFLite full integer post-training quantization; per-channel weights'),
         'weight_quantization_granularity': 'per_tensor' if disable_per_channel else 'per_channel',
+        'neuron_class_sigmoid': sigmoid_report,
         'dataset': str(Path(directory).resolve()),
         'calibration_images': [{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in calibration],
         'evaluation_images': [p.name for p in evaluation], 'float_tensor_count':len(float_tensors),

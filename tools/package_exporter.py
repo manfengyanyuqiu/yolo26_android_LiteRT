@@ -78,7 +78,7 @@ for name,directory in CASES.items():
 
 scripts=['model_exporter.py','model_exporter_gui.py','export_yolo26.py','convert_model.py',
          'import_onnx.py','export_precisions.py','rewrite_attention_merge.py',
-         'quantize_yolo.py','inspect_tflite.py','validate_export.py','evaluate_yolo.py']
+         'quantize_yolo.py','fix_neuron_int8.py','inspect_tflite.py','validate_export.py','evaluate_yolo.py']
 for name in scripts:copy(ROOT/'tools'/name,TOOL/'tools'/name)
 for name in ('launch_exporter.cmd','launch_exporter.ps1'):copy(ROOT/name,TOOL/name)
 copy(ROOT/'MODEL_EXPORTER.md',TOOL/'使用说明.md')
