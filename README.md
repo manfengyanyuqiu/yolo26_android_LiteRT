@@ -49,6 +49,7 @@ Android Java 源码位于 `app/src/main/java/`：
 | `CameraGlView.java` | OpenGL ES 预览渲染 |
 | `DetectionOverlay.java` | 将检测框映射到预览坐标并绘制 |
 | `MainActivity.java` | 图片选择、模型选择和检测入口 |
+| `ModelImportOptions.java` | 从输出张量识别布局，并解析发布模型的系列和坐标约定 |
 | `CameraDetectionActivity.java` | 摄像头检测工作流和推理耗时显示 |
 
 单元测试和设备测试分别位于 `app/src/test/java/` 与 `app/src/androidTest/java/`，覆盖解码器、后处理一致性、模型调用和真机 NPU 延迟。
@@ -78,6 +79,20 @@ $env:JAVA_HOME="C:\Path\to\jdk-17"
 APK 输出路径：`app/build/outputs/apk/debug/app-debug.apk`。
 
 设备需要 Android 12（API 31）或更高版本、`arm64-v8a` ABI，以及可用的 MediaTek Neuron/LiteRT 驱动。安装后从图片检测入口选择 TFLite 模型，或进入摄像头检测页面查看实时画框和单次推理耗时。
+
+### 📦 安装与模型导入
+
+在 [Releases](https://github.com/manfengyanyuqiu/yolo26_android_LiteRT/releases/latest) 下载 APK，或下载包含 APK 与 12 个 320×320 模型的完整 ZIP。模型覆盖 YOLOv5n/s、YOLOv8n/s、YOLO26n/s，每种各有 FP16 权重 / FLOAT32 I/O 和 INT8 两版。
+
+1. 安装 APK，点击“选择 TFLite 模型”，选择解压后的 `.tflite` 文件。
+2. 应用从文件名识别 YOLO 系列，从实际输出张量识别 `[1,N,C]` 或 `[1,C,N]` 布局；输入尺寸自动读取，无需手填。包内模型类别数均为 **80**。
+3. 包内模型使用归一化坐标，导入后自动勾选。文件名中的 `_norm_` 表示该约定，旧发布包的 12 个简化文件名也支持自动识别。自定义模型需要按实际导出设置核对系列、类别数和归一化坐标；张量形状本身无法说明坐标是否归一化。
+4. 点击“编译到联发科 NPU”。模型就绪后，选择图片并点击“检测当前图片”，或进入摄像头检测。
+5. 测速时使用同一张图片，点击“测速：5 次预热 + 50 次推理”，比较平均耗时（ms）。首次编译耗时不属于推理耗时。
+
+模型参数校验错误与 NPU 编译或首次执行错误分别显示。若输出为 `[1,1,84,2100]`，它对应 v8/26 密集检测的 `[1,C,N]` 布局，不应选择 v5 的 `[1,N,C]` 布局。界面默认参数也不能代替模型的实际导出约定。
+
+正式 release APK 已在 vivo V2548A / MT6993 / Android 17 上验证全部 12 个模型：通过文件内容 URI 导入，检查自动参数，然后点击编译和图片检测按钮。新旧两套文件名共 24 项通过，详见 [导入与编译验证结果](benchmarks/model-import-0.6.5.json)。该检查不替代检测精度评估，原生文件选择器对话框本身未自动化操作。
 
 ## 🔄 模型转换
 

@@ -25,6 +25,12 @@ public final class NpuDeviceInstrumentation extends Instrumentation {
         Bundle result = new Bundle();
         File report = new File(getTargetContext().getFilesDir(), "device-test.txt");
         try (PrintWriter writer = new PrintWriter(report)) {
+            if(Boolean.parseBoolean(arguments.getString("importUi","false"))) {
+                ImportDeviceCheck.run(this,arguments,writer);
+                writer.println("PASS");writer.flush();
+                result.putString("stream",new String(java.nio.file.Files.readAllBytes(report.toPath()),java.nio.charset.StandardCharsets.UTF_8));
+                finish(Activity.RESULT_OK,result);return;
+            }
             Thread testThread=Thread.currentThread();
             Thread watchdog=new Thread(()->{
                 try {Thread.sleep(12000);if(!testThread.isAlive())return;

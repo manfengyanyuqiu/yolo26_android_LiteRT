@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.tensorflow.lite.Interpreter;
 
 public final class MainActivity extends Activity {
     private static final int PICK_MODEL=1, PICK_IMAGE=2, CAMERA_PERMISSION=3;
@@ -52,7 +53,7 @@ public final class MainActivity extends Activity {
         layout=spinner(content,new String[]{"输出 [1,N,C]","输出 [1,C,N]"});
         classes=new EditText(this); classes.setHint("类别数量（须与模型一致）"); classes.setText("80");
         classes.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); content.addView(classes);
-        normalized=new CheckBox(this); normalized.setText("模型使用归一化坐标（文件名含 _norm_ 时勾选；宽高可能超过 1）");
+        normalized=new CheckBox(this); normalized.setText("模型使用归一化坐标（发布包自动识别；自定义模型请按导出设置核对）");
         normalized.setChecked(false); content.addView(normalized);
         pickModel=button(content,"1. 选择 TFLite 模型",()->pick(PICK_MODEL,"*/*"));
         load=button(content,"2. 编译到联发科 NPU",this::loadModel);
@@ -106,6 +107,10 @@ public final class MainActivity extends Activity {
         super.onActivityResult(request,result,data);
         if(result!=RESULT_OK || data==null)return;
         Uri uri=data.getData();if(uri==null)return;
+        final int selectedFamily=family.getSelectedItemPosition();
+        final int selectedClasses;
+        try { selectedClasses=Integer.parseInt(classes.getText().toString());if(selectedClasses<1)throw new NumberFormatException(); }
+        catch(NumberFormatException e){status.setText("类别数量需要是正整数");return;}
         busy(true,"读取文件…");
         worker.execute(()-> {
             try {
@@ -117,23 +122,26 @@ public final class MainActivity extends Activity {
                     if(!name.toLowerCase(Locale.ROOT).endsWith(".tflite"))
                         throw new IllegalArgumentException("请选择 .tflite 模型；原始 .fymf 需从训练模型重新导出");
                     File file=new File(getFilesDir(),"detector.tflite");
+                    modelFile=null;modelFailure=null;
                     if(detector!=null){detector.close();detector=null;}
                     try(InputStream in=getContentResolver().openInputStream(uri);FileOutputStream out=new FileOutputStream(file)){
                         if(in==null)throw new IllegalStateException("文件读取失败");
                         android.os.FileUtils.copy(in,out);
                     }
+                    ModelImportOptions options;
+                    try(Interpreter metadata=new Interpreter(file,new Interpreter.Options().setNumThreads(1))){
+                        if(metadata.getOutputTensorCount()!=1)
+                            throw new IllegalArgumentException("请选择单输出检测模型");
+                        options=ModelImportOptions.resolve(name,metadata.getOutputTensor(0).shape(),selectedFamily,selectedClasses);
+                    }
                     modelFile=file;modelFailure=null;String label=name;
                     runOnUiThread(()->{
                         modelLabel.setText(label);
-                        String lower = label.toLowerCase(Locale.ROOT);
-                        if (lower.contains("yolo26")) family.setSelection(lower.contains("_e2e_") ? 3 : 2);
-                        else if (lower.contains("yolov5")) family.setSelection(0);
-                        else if (lower.contains("yolov8")) family.setSelection(1);
-                        if (lower.contains("_channels_")) layout.setSelection(1);
-                        else if (lower.contains("_rows_") || lower.contains("yolov5")) layout.setSelection(0);
-                        normalized.setChecked(lower.contains("_norm_"));
+                        family.setSelection(options.familyIndex());
+                        layout.setSelection(options.layoutIndex());
+                        normalized.setChecked(options.normalized());
                     });
-                    finishTask("模型已复制，请检查版本、布局、类别数量，再编译到 NPU。");
+                    finishTask("模型已读取，输出布局已按张量识别。请核对系列、类别数及归一化坐标后编译到 NPU。");
                 }else if(request==PICK_IMAGE){
                     Bitmap decoded=ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(),uri),
                         (decoder,info,source)->decoder.setAllocator(ImageDecoder.ALLOCATOR_SOFTWARE));
@@ -159,7 +167,7 @@ public final class MainActivity extends Activity {
                 if(detector!=null){detector.close();detector=null;}
                 detector=new NpuDetector(this,modelFile,f,l,count,norm);finishTask(detector.description);
             }catch(Exception|LinkageError e){
-                modelFailure="NPU 编译或首次执行失败："+e;
+                modelFailure=(e instanceof IllegalArgumentException ? "模型参数校验失败：" : "NPU 编译或首次执行失败：")+e;
                 finishTask(modelFailure+"\n详细原因已记录到 DIMENSITY-NPU 日志，未切换 CPU。");
             }
         });

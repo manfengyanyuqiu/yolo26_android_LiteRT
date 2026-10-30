@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-30",
+  "app_version": "0.6.5",
+  "build_type": "signed release",
+  "apk_sha256": "b0ff48773ea89c2ed1abe33daf80ade43b9daabf2bbaff9be94396a7e5f1e013",
+  "device": {
+    "model": "vivo V2548A",
+    "soc": "MT6993",
+    "android": "17"
+  },
+  "backend": "LiteRT 2.3.0 MediaTek Neuron, NPU only",
+  "scope": "MediaStore document content URI -> actual onActivityResult -> automatic options -> compile button -> image document -> detect button",
+  "limitations": [
+    "Native file picker dialog itself is not automated",
+    "Compile/run and UI import checks; not an accuracy evaluation or new speed benchmark"
+  ],
+  "models": [
+    {
+      "file": "yolo26n_320_fp16weights_float32io.tflite",
+      "sha256": "fb222c4963e93dbf97c3cf3aed4bc2696c781fb061d62510b30dee24258e6b0b",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "fb222c4963e93dbf97c3cf3aed4bc2696c781fb061d62510b30dee24258e6b0b",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26n_320_int8.tflite",
+      "sha256": "8c572a13092a4d0e3131f797e0f1b8c9f570968feb06c1aed5e9308b65b52d5f",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26n_320_4d_norm_channels_int8.tflite",
+      "sha256": "8c572a13092a4d0e3131f797e0f1b8c9f570968feb06c1aed5e9308b65b52d5f",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26s_320_fp16weights_float32io.tflite",
+      "sha256": "c3d877e26ad8ab9eb32af9b56374b83d8608210474b938d1c9d11d1f0f425436",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "c3d877e26ad8ab9eb32af9b56374b83d8608210474b938d1c9d11d1f0f425436",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26s_320_int8.tflite",
+      "sha256": "b7216a33325bb0736fdb803e8b908865c89cef1e568c9a28e4ab8e20b5935cb1",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolo26s_320_4d_norm_channels_int8.tflite",
+      "sha256": "b7216a33325bb0736fdb803e8b908865c89cef1e568c9a28e4ab8e20b5935cb1",
+      "family": "YOLO26",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5n_320_fp16weights_float32io.tflite",
+      "sha256": "3984dae87c68be60118fd537079ec47ed48aba92d43720f1c3daec8a06f524d9",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5n_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "3984dae87c68be60118fd537079ec47ed48aba92d43720f1c3daec8a06f524d9",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5n_320_int8.tflite",
+      "sha256": "7ea823c91cb11b1eea6a82b412cc69d43a79849274e7c88725432a799912dbdb",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5n_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ea823c91cb11b1eea6a82b412cc69d43a79849274e7c88725432a799912dbdb",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5s_320_fp16weights_float32io.tflite",
+      "sha256": "c99d712e1d29df5208a4a73d2389e844530e342623170ce3aca0f848173e44e6",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5s_320_4d_norm_rows_fp16weights_float32io.tflite",
+      "sha256": "c99d712e1d29df5208a4a73d2389e844530e342623170ce3aca0f848173e44e6",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5s_320_int8.tflite",
+      "sha256": "7ce3d1cd11076d3ef5ad0c5c17bb0c8da1f617e4ccace57326f47255ea1bd6a8",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov5s_320_4d_norm_rows_int8.tflite",
+      "sha256": "7ce3d1cd11076d3ef5ad0c5c17bb0c8da1f617e4ccace57326f47255ea1bd6a8",
+      "family": "YOLOV5",
+      "layout": "ROWS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8n_320_fp16weights_float32io.tflite",
+      "sha256": "5b809bd184c59bca3c576108502dbce701c85865c7a7b28151f71b5518845838",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8n_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "5b809bd184c59bca3c576108502dbce701c85865c7a7b28151f71b5518845838",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8n_320_int8.tflite",
+      "sha256": "18d2daad40c12b96e0a019e7de48635e6c6aaebb8d336b8e4d18accfedb8f9fb",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8n_320_4d_norm_channels_int8.tflite",
+      "sha256": "18d2daad40c12b96e0a019e7de48635e6c6aaebb8d336b8e4d18accfedb8f9fb",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8s_320_fp16weights_float32io.tflite",
+      "sha256": "d34250865437348fdb02ba4309dc3b3904690c701b72be7b7e2461e50688b4a3",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8s_320_4d_norm_channels_fp16weights_float32io.tflite",
+      "sha256": "d34250865437348fdb02ba4309dc3b3904690c701b72be7b7e2461e50688b4a3",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8s_320_int8.tflite",
+      "sha256": "40f4295c482a27b08317d5150b15cb78cf9727553d553aa79fbf98572b499961",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    },
+    {
+      "file": "yolov8s_320_4d_norm_channels_int8.tflite",
+      "sha256": "40f4295c482a27b08317d5150b15cb78cf9727553d553aa79fbf98572b499961",
+      "family": "YOLOV8",
+      "layout": "CHANNELS",
+      "normalized_coordinates": true,
+      "result": "PASS"
+    }
+  ]
+}
